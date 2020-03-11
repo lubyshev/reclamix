@@ -115,21 +115,6 @@ class RedisTablesCommand extends CConsoleCommand
     }
 
     /**
-     * Инициализация класса
-     *
-     * @return void
-     */
-    public function init()
-    {
-        // Подключим memcache
-        // require_once Yii::app()->basePath . '/../mc.php';
-        // require_once Yii::app()->basePath . '/../db.php';
-        require_once Yii::app()->basePath.'/../libf.php';
-
-        return parent::init();
-    }
-
-    /**
      * Приостановлена ли cинхронизация.
      *
      * @return bool
