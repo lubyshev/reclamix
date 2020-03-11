@@ -9,6 +9,11 @@
  */
 const log = true;
 
+const urlGetBanner = "getBanner";
+const urlNeedCaptcha = "needCaptcha";
+const urlBannerFinish = "bannerFinish";
+const urlGetBannerTemplates = "getBannerTemplates";
+
 /**
  * Список вида Тип => Шаблон для генерации html-кода баннера.
  *
@@ -400,7 +405,7 @@ class BannerModel {
    * @returns {undefined}
    */
   sendPayRequest(data, cbOk, cbError) {
-    let link = serverUrl() + "/advert/bannerFinish?ver=" + this.parent.version;
+    let link = serverUrl() + urlBannerFinish + "?ver=" + this.parent.version;
     ajax(
       link,
       data,
@@ -579,7 +584,7 @@ class BannerModel {
       if (bannerTemplates && bannerTemplatesUpdatedAt + 86400 > tm) {
         return resolve();
       }
-      let link = serverUrl() + "/advert/getBannerTemplates?ver=" + $this.parent.version;
+      let link = serverUrl() + urlGetBannerTemplates + "?ver=" + $this.parent.version;
       ajax(link, null,
         function (response) {
           if (response.hasOwnProperty("templates")) {
@@ -1358,8 +1363,8 @@ class Banners {
       let $this = this;
       let link =
             this.actualCaptcha
-              ? serverUrl() + "/advert/getBanner?ver=" + this.version
-              : serverUrl() + "/advert/needCaptcha?ver=" + this.version;
+              ? serverUrl() + urlGetBanner + "?ver=" + this.version
+              : serverUrl() + urlNeedCaptcha + "?ver=" + this.version;
       let data =
             this.actualCaptcha
               ? {
