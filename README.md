@@ -2,7 +2,9 @@
 ## Описание некоторых сервисов
 * [Кампании (бекграунд сайта)](./docs/campaigns.md)
 * [Закешированные таблицы (расширение класса Yii::CActiveRecord)](./docs/activeRedis.md)
+* [Баннеры в расширении google](./docs/banners.md)
 ## Примеры кода
-* [CampaignsCommand](./src/CampaignsCommand.php)
-* [CActiveRecordRedis](./src/CActiveRecordRedis.php)
-* [RedisTablesCommand](./src/RedisTablesCommand.php)
+* [CampaignsCommand.php](./src/CampaignsCommand.php)
+* [CActiveRecordRedis.php](./src/CActiveRecordRedis.php)
+* [RedisTablesCommand.php](./src/RedisTablesCommand.php)
+* [Banners.js](./src/Banners.js)
